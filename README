@@ -1,1 +1,36 @@
-It's a Readme !
+本系统提供一个对ASP.NET MVC 系统架构，遵循面向接口式编程，所有业务调用均直接使用接口，实例创建全部交由IOC创建。
+采用StructureMap 作为IOC框架，以构造方式注入。
+ORM实现的是Entity framework 6的方式并进行了部分封装，日后会对ADO.NET 和 NHIBERNATE进行引入。
+本示例设计思想来源于 tystudio ，和MVC开源项目ABP的思想并加了一些自己的改进。
+DOC文件中还有另外一个已经正式使用中的的项目结构截图。
+
+使用过程中涉及到的工具：
+VS版本为 2015 professional RC ，
+数据库为 SQLSERVER 2008 R2 ，
+源代码工具为github,也可以试用 SVN绑定github的https地址，或 使用SSH进行获取
+开源代码存放于github中
+地址为：https://github.com/guochangshan/Jiaheng.House2.Vote
+
+注意：
+本示例着重构建了项目结构也部分实现，前台MVC部分截至目前由于时间原因并未做太多改动。
+编译没有问题，启动前台可能会报错。
+
+
+10个工程功能介绍
+Jiaheng.House2.Vote.DTO，主要放我们ViewModel，分离View和Entity Framework，降低代码耦合度，接下来将引入 DTO框架来实现ViewModel与DataModel直接转换问题。
+Jiaheng.House2.Vote.Services，业务逻辑层所有的业务逻辑都放在这一工程，通过StructureMap实现对Repository的注入。
+Jiaheng.House2.Vote.Tools，项目通用工具类，加密，字符串处理，线程处理，缓存类等。
+Jiaheng.House2.Vote.Repositories，如名字这里放置所有Repository，数据库持久层，只有这一层去和Model层打交道。
+Jiaheng.House2.Vote.Entities，Entity Framework 的数据实体存放位置。
+Jiaheng.House2.Vote.Ado.Net，ADO.NET访问数据方法的封装类。
+Jiaheng.House2.Vote.NHibernate，NH的配置管理类，暂未实现涉及。
+Jiaheng.House2.Vote.StructureMap，这里放置的StructureMap的配置与管理。
+Jiaheng.House2.Vote.WebUI工程，UI层，Controller和View都在这一层。
+Solution Items  需要引入的DLLS和一些项目相关文件。
+
+
+一些说明：
+本示例具体实现的内容比较少，主要是一个公司面试需求需要在几天内提交，再加上本人时间安排原因，主要重点放在项目结构设计、框架应用、数据库表设计等。
+
+如果觉得系统还可以，请大家推荐分享一下，让更多的学习MVC的朋友看到，本人也会不断完善该项目，谢谢。
+
