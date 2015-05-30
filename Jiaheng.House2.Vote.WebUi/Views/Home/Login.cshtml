@@ -1,0 +1,22 @@
+﻿@model Jiaheng.House2.Vote.DTO.ViewModel.LoginViewModel
+
+@using (Html.BeginForm("LoginSubmit", "Home", FormMethod.Post))
+{
+    <ul>
+        <li>
+            @Html.ValidationSummary(true)
+            @Html.TextBoxFor(model => model.Username)
+            <div>@Html.ValidationMessageFor(model => model.Username)</div>
+        </li>
+        <li>
+            <span id="passText">
+                @Html.PasswordFor(model => model.Password)
+            </span>
+            <div>@Html.ValidationMessageFor(model => model.Password)</div>
+        </li>
+        <li>
+            <input type="submit" id="loginSubmit" class="login_btn1" value="登 录" />
+
+        </li>
+    </ul>
+}

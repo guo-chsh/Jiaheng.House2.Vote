@@ -1,0 +1,316 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DB_House2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="IPTables">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ipadress" Type="nvarchar" MaxLength="50" />
+          <Property Name="Province" Type="nvarchar" MaxLength="20" />
+          <Property Name="City" Type="nvarchar" MaxLength="20" />
+          <Property Name="Other" Type="nvarchar" MaxLength="20" />
+          <Property Name="Updatetime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Selectobj_articles">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ArticleTitle" Type="nvarchar" MaxLength="50" />
+          <Property Name="articleContent" Type="nvarchar" MaxLength="4000" />
+          <Property Name="Createtime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Selectobj_pics">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PicName" Type="nvarchar" MaxLength="50" />
+          <Property Name="PicUrl" Type="nvarchar" MaxLength="200" />
+          <Property Name="Createtime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="User_info">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="Updatetime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Vote_ChooseDetails">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Userid" Type="int" />
+          <Property Name="VoteItemId" Type="int" />
+          <Property Name="Createtime" Type="datetime" />
+          <Property Name="UserChooseIp" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Vote_items">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VotemainId" Type="int" />
+          <Property Name="VoteItemName" Type="nvarchar" MaxLength="50" />
+          <Property Name="VoteInitialCounts" Type="int" />
+          <Property Name="VoteCounts" Type="int" />
+          <Property Name="SelectobjID" Type="int" Nullable="false" />
+          <Property Name="VoteTypeID" Type="int" />
+          <Property Name="CreateTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Vote_main">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VoteName" Type="nchar" MaxLength="10" />
+          <Property Name="Begintime" Type="datetime" />
+          <Property Name="Endtime" Type="datetime" />
+          <Property Name="VoteDescription" Type="nvarchar" MaxLength="500" />
+          <Property Name="VoteTypeID" Type="int" />
+          <Property Name="Createtime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Vote_maintypes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VoteTypeChar" Type="char" MaxLength="10" />
+          <Property Name="VoteType" Type="nvarchar" MaxLength="10" />
+          <Property Name="Createtime" Type="datetime" />
+        </EntityType>
+        <EntityContainer Name="DB_House2ModelStoreContainer">
+          <EntitySet Name="IPTables" EntityType="Self.IPTables" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Selectobj_articles" EntityType="Self.Selectobj_articles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Selectobj_pics" EntityType="Self.Selectobj_pics" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User_info" EntityType="Self.User_info" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vote_ChooseDetails" EntityType="Self.Vote_ChooseDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vote_items" EntityType="Self.Vote_items" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vote_main" EntityType="Self.Vote_main" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vote_maintypes" EntityType="Self.Vote_maintypes" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Jiaheng.House2.Vote.Entities" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="IPTables">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ipadress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Province" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Other" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Updatetime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Selectobj_articles">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ArticleTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="articleContent" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="Createtime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Selectobj_pics">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PicName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PicUrl" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Createtime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="User_info">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Updatetime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Vote_ChooseDetails">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Userid" Type="Int32" />
+          <Property Name="VoteItemId" Type="Int32" />
+          <Property Name="Createtime" Type="DateTime" Precision="3" />
+          <Property Name="UserChooseIp" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Vote_items">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VotemainId" Type="Int32" />
+          <Property Name="VoteItemName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VoteInitialCounts" Type="Int32" />
+          <Property Name="VoteCounts" Type="Int32" />
+          <Property Name="SelectobjID" Type="Int32" Nullable="false" />
+          <Property Name="VoteTypeID" Type="Int32" />
+          <Property Name="CreateTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Vote_main">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VoteName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Begintime" Type="DateTime" Precision="3" />
+          <Property Name="Endtime" Type="DateTime" Precision="3" />
+          <Property Name="VoteDescription" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="VoteTypeID" Type="Int32" />
+          <Property Name="Createtime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Vote_maintypes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VoteTypeChar" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="VoteType" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Createtime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="IPTables" EntityType="Self.IPTables" />
+          <EntitySet Name="Selectobj_articles" EntityType="Self.Selectobj_articles" />
+          <EntitySet Name="Selectobj_pics" EntityType="Self.Selectobj_pics" />
+          <EntitySet Name="User_info" EntityType="Self.User_info" />
+          <EntitySet Name="Vote_ChooseDetails" EntityType="Self.Vote_ChooseDetails" />
+          <EntitySet Name="Vote_items" EntityType="Self.Vote_items" />
+          <EntitySet Name="Vote_main" EntityType="Self.Vote_main" />
+          <EntitySet Name="Vote_maintypes" EntityType="Self.Vote_maintypes" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DB_House2ModelStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="IPTables">
+            <EntityTypeMapping TypeName="Jiaheng.House2.Vote.Entities.IPTables">
+              <MappingFragment StoreEntitySet="IPTables">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Ipadress" ColumnName="Ipadress" />
+                <ScalarProperty Name="Province" ColumnName="Province" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Other" ColumnName="Other" />
+                <ScalarProperty Name="Updatetime" ColumnName="Updatetime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Selectobj_articles">
+            <EntityTypeMapping TypeName="Jiaheng.House2.Vote.Entities.Selectobj_articles">
+              <MappingFragment StoreEntitySet="Selectobj_articles">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ArticleTitle" ColumnName="ArticleTitle" />
+                <ScalarProperty Name="articleContent" ColumnName="articleContent" />
+                <ScalarProperty Name="Createtime" ColumnName="Createtime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Selectobj_pics">
+            <EntityTypeMapping TypeName="Jiaheng.House2.Vote.Entities.Selectobj_pics">
+              <MappingFragment StoreEntitySet="Selectobj_pics">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="PicName" ColumnName="PicName" />
+                <ScalarProperty Name="PicUrl" ColumnName="PicUrl" />
+                <ScalarProperty Name="Createtime" ColumnName="Createtime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User_info">
+            <EntityTypeMapping TypeName="Jiaheng.House2.Vote.Entities.User_info">
+              <MappingFragment StoreEntitySet="User_info">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Updatetime" ColumnName="Updatetime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vote_ChooseDetails">
+            <EntityTypeMapping TypeName="Jiaheng.House2.Vote.Entities.Vote_ChooseDetails">
+              <MappingFragment StoreEntitySet="Vote_ChooseDetails">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Userid" ColumnName="Userid" />
+                <ScalarProperty Name="VoteItemId" ColumnName="VoteItemId" />
+                <ScalarProperty Name="Createtime" ColumnName="Createtime" />
+                <ScalarProperty Name="UserChooseIp" ColumnName="UserChooseIp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vote_items">
+            <EntityTypeMapping TypeName="Jiaheng.House2.Vote.Entities.Vote_items">
+              <MappingFragment StoreEntitySet="Vote_items">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="VotemainId" ColumnName="VotemainId" />
+                <ScalarProperty Name="VoteItemName" ColumnName="VoteItemName" />
+                <ScalarProperty Name="VoteInitialCounts" ColumnName="VoteInitialCounts" />
+                <ScalarProperty Name="VoteCounts" ColumnName="VoteCounts" />
+                <ScalarProperty Name="SelectobjID" ColumnName="SelectobjID" />
+                <ScalarProperty Name="VoteTypeID" ColumnName="VoteTypeID" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vote_main">
+            <EntityTypeMapping TypeName="Jiaheng.House2.Vote.Entities.Vote_main">
+              <MappingFragment StoreEntitySet="Vote_main">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="VoteName" ColumnName="VoteName" />
+                <ScalarProperty Name="Begintime" ColumnName="Begintime" />
+                <ScalarProperty Name="Endtime" ColumnName="Endtime" />
+                <ScalarProperty Name="VoteDescription" ColumnName="VoteDescription" />
+                <ScalarProperty Name="VoteTypeID" ColumnName="VoteTypeID" />
+                <ScalarProperty Name="Createtime" ColumnName="Createtime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vote_maintypes">
+            <EntityTypeMapping TypeName="Jiaheng.House2.Vote.Entities.Vote_maintypes">
+              <MappingFragment StoreEntitySet="Vote_maintypes">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="VoteTypeChar" ColumnName="VoteTypeChar" />
+                <ScalarProperty Name="VoteType" ColumnName="VoteType" />
+                <ScalarProperty Name="Createtime" ColumnName="Createtime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
