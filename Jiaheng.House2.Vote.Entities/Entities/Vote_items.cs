@@ -1,5 +1,6 @@
 ﻿
 using System;
+
 namespace Jiaheng.House2.Vote.Entities
 {
     /// <summary>
@@ -12,13 +13,23 @@ namespace Jiaheng.House2.Vote.Entities
         { }
         #region Model
         private int _id;
-        private int? _votemainid;
+        private int _votemainid;
         private string _voteitemname;
-        private int? _voteinitialcounts;
-        private int? _votecounts;
+        private int _voteinitialcounts;
+        private int _votecounts;
         private int _selectobjid;
-        private int? _votetypeid;
-        private DateTime? _createtime;
+        public string _voteType;
+        private DateTime _createtime;
+
+        /// <summary>
+        /// 投票活动类型
+        /// </summary>
+        public string VoteType
+        {
+            get { return _voteType; }
+            set { _voteType = value; }
+        }
+
         /// <summary>
         /// 
         /// </summary>
@@ -30,7 +41,7 @@ namespace Jiaheng.House2.Vote.Entities
         /// <summary>
         /// 投票主表ID
         /// </summary>
-        public int? VotemainId
+        public int VotemainId
         {
             set { _votemainid = value; }
             get { return _votemainid; }
@@ -46,7 +57,7 @@ namespace Jiaheng.House2.Vote.Entities
         /// <summary>
         /// 初始化的数量
         /// </summary>
-        public int? VoteInitialCounts
+        public int VoteInitialCounts
         {
             set { _voteinitialcounts = value; }
             get { return _voteinitialcounts; }
@@ -54,7 +65,7 @@ namespace Jiaheng.House2.Vote.Entities
         /// <summary>
         /// 当前真实投票数量
         /// </summary>
-        public int? VoteCounts
+        public int VoteCounts
         {
             set { _votecounts = value; }
             get { return _votecounts; }
@@ -68,17 +79,9 @@ namespace Jiaheng.House2.Vote.Entities
             get { return _selectobjid; }
         }
         /// <summary>
-        /// 投票类型与主表中一致
-        /// </summary>
-        public int? VoteTypeID
-        {
-            set { _votetypeid = value; }
-            get { return _votetypeid; }
-        }
-        /// <summary>
         /// 创建时间
         /// </summary>
-        public DateTime? CreateTime
+        public DateTime CreateTime
         {
             set { _createtime = value; }
             get { return _createtime; }

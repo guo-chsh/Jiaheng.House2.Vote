@@ -16,8 +16,8 @@ namespace Jiaheng.House2.Vote.DTO.ViewModel
         public DateTime Begintime { get; set; }
         public DateTime Endtime { get; set; }
         public string Description { get; set; }
-        public VoteMaintypeViewModel Votemaintype { get; set; }
-        public IEnumerable<VoteItemViewModel> VoteItems { get; set; }
+        public string Votemaintype { get; set; }
+        public IList<VoteItemViewModel> VoteItems { get; set; }
 
       
     }

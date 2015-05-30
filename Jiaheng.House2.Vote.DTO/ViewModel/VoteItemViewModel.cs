@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Jiaheng.House2.Vote.Entities;
 
 namespace Jiaheng.House2.Vote.DTO.ViewModel
 {
@@ -16,7 +17,22 @@ namespace Jiaheng.House2.Vote.DTO.ViewModel
         public string VoteItemName { get; set; }
         public int VoteInitialCounts { get; set; }
         public int VoteCounts { get; set; }
-        public VoteMaintypeViewModel MainType { get; set; }
-        public ISelectobj Selectobj { get; set; }
+        public int SelectObjID { get; set; }
+        public string TypeChar { get; set; }
+
+        public Vote_items ToDataModel()
+        {
+            return new Vote_items
+            {
+                id = ID,
+                CreateTime = DateTime.Now,
+                SelectobjID = SelectObjID,
+                
+                VoteCounts = VoteCounts,
+                VoteInitialCounts = VoteInitialCounts,
+                VoteItemName = VoteItemName,
+                VotemainId = VotemainID
+            };
+        }
     }
 }

@@ -9,10 +9,11 @@ namespace Jiaheng.House2.Vote.DTO.ViewModel
     /// <summary>
     /// 被投票对象之图片
     /// </summary>
-    public class PictureViewModel : ISelectobj
+    public class PictureViewModel
     {
         public int ID { get; set; }
-        public string Typechar { get; set; }
+
+        public string PicName { get; set; }
 
         public string Picurl { get; set; }
 

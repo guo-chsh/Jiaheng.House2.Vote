@@ -17,6 +17,5 @@ namespace Jiaheng.House2.Vote.Services.Interfaces
         bool UpdateVoteItemChooseCounts(VoteItemViewModel model);
         IEnumerable<VoteMainViewModel> GetAllVotes();
         VoteMainViewModel GetVoteByid(int id);
-        IEnumerable<VoteMaintypeViewModel> GetAllTypes();
     }
 }

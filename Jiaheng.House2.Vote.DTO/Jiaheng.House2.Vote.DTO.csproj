@@ -45,14 +45,17 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\ArticlesViewModel.cs" />
     <Compile Include="ViewModel\ChooseDetailsViewModel.cs" />
-    <Compile Include="ViewModel\ISelectobj.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\PictureViewModel.cs" />
     <Compile Include="ViewModel\VoteItemViewModel.cs" />
-    <Compile Include="ViewModel\VoteMaintypeViewModel.cs" />
     <Compile Include="ViewModel\VoteMainViewModel.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Jiaheng.House2.Vote.Entities\Jiaheng.House2.Vote.Entities.csproj">
+      <Project>{ca12d51b-1ef3-4d9a-84c3-b70e04d08fad}</Project>
+      <Name>Jiaheng.House2.Vote.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

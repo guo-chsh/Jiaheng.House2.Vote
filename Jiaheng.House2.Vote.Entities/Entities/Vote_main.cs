@@ -13,11 +13,12 @@ namespace Jiaheng.House2.Vote.Entities
         #region Model
         private int _id;
         private string _votename;
-        private DateTime? _begintime;
-        private DateTime? _endtime;
+        private DateTime _begintime;
+        private DateTime _endtime;
         private string _votedescription;
-        private int? _votetypeid;
-        private DateTime? _createtime;
+        private DateTime _createtime;
+        private string _voteType;
+
         /// <summary>
         /// 
         /// </summary>
@@ -37,7 +38,7 @@ namespace Jiaheng.House2.Vote.Entities
         /// <summary>
         /// 开始时间
         /// </summary>
-        public DateTime? Begintime
+        public DateTime Begintime
         {
             set { _begintime = value; }
             get { return _begintime; }
@@ -45,7 +46,7 @@ namespace Jiaheng.House2.Vote.Entities
         /// <summary>
         /// 结束时间
         /// </summary>
-        public DateTime? Endtime
+        public DateTime Endtime
         {
             set { _endtime = value; }
             get { return _endtime; }
@@ -59,21 +60,23 @@ namespace Jiaheng.House2.Vote.Entities
             get { return _votedescription; }
         }
         /// <summary>
-        /// 投票类型
-        /// </summary>
-        public int? VoteTypeID
-        {
-            set { _votetypeid = value; }
-            get { return _votetypeid; }
-        }
-        /// <summary>
         /// 创建时间
         /// </summary>
-        public DateTime? Createtime
+        public DateTime Createtime
         {
             set { _createtime = value; }
             get { return _createtime; }
         }
+
+        /// <summary>
+        /// 投票活动类型
+        /// </summary>
+        public string VoteType
+        {
+            get { return _voteType; }
+            set { _voteType = value; }
+        }
+
         #endregion Model
 
     }

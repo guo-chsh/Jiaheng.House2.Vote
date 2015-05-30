@@ -11,6 +11,9 @@ using Jiaheng.House2.Vote.Tools;
 
 namespace Jiaheng.House2.Vote.Services.Services
 {
+    /// <summary>
+    /// 所有用户信息操作在此处本例暂时只写了一个登录方法
+    /// </summary>
     public class UserOperationServices : IUserOperationServices
     {
         IUserinfoRepository<User_info> _iUserinfoRepository;

@@ -25,14 +25,5 @@ namespace Jiaheng.House2.Vote.Entityframework
         {
             throw new UnintentionalCodeFirstException();
         }
-    
-        public virtual DbSet<IPTables> IPTables { get; set; }
-        public virtual DbSet<Selectobj_articles> Selectobj_articles { get; set; }
-        public virtual DbSet<Selectobj_pics> Selectobj_pics { get; set; }
-        public virtual DbSet<User_info> User_info { get; set; }
-        public virtual DbSet<Vote_ChooseDetails> Vote_ChooseDetails { get; set; }
-        public virtual DbSet<Vote_items> Vote_items { get; set; }
-        public virtual DbSet<Vote_main> Vote_main { get; set; }
-        public virtual DbSet<Vote_maintypes> Vote_maintypes { get; set; }
     }
 }

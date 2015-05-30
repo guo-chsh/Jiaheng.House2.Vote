@@ -52,7 +52,6 @@
     <Compile Include="Dao\UserinfoRepository.cs" />
     <Compile Include="Dao\VoteItemRepository.cs" />
     <Compile Include="Dao\VoteMainRepository.cs" />
-    <Compile Include="Dao\VoteMainTypesRepository.cs" />
     <Compile Include="Interfaces\IArticlesRepository.cs" />
     <Compile Include="Interfaces\IChooseDetailsRepository.cs" />
     <Compile Include="Interfaces\IIPTableRepository.cs" />
@@ -60,7 +59,6 @@
     <Compile Include="Interfaces\IUserinfoRepository.cs" />
     <Compile Include="Interfaces\IVoteItemRepository.cs" />
     <Compile Include="Interfaces\IVoteMainRepository.cs" />
-    <Compile Include="Interfaces\IVoteMainTypesRepository.cs" />
     <Compile Include="IVoteRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VoteRepository.cs" />

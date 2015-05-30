@@ -12,7 +12,6 @@
         <EntityTypeShape EntityType="Jiaheng.House2.Vote.Entities.Vote_ChooseDetails" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Jiaheng.House2.Vote.Entities.Vote_items" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Jiaheng.House2.Vote.Entities.Vote_main" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Jiaheng.House2.Vote.Entities.Vote_maintypes" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

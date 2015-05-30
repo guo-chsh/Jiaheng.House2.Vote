@@ -78,15 +78,6 @@
           <Property Name="VoteTypeID" Type="int" />
           <Property Name="Createtime" Type="datetime" />
         </EntityType>
-        <EntityType Name="Vote_maintypes">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="VoteTypeChar" Type="char" MaxLength="10" />
-          <Property Name="VoteType" Type="nvarchar" MaxLength="10" />
-          <Property Name="Createtime" Type="datetime" />
-        </EntityType>
         <EntityContainer Name="DB_House2ModelStoreContainer">
           <EntitySet Name="IPTables" EntityType="Self.IPTables" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Selectobj_articles" EntityType="Self.Selectobj_articles" Schema="dbo" store:Type="Tables" />
@@ -95,7 +86,6 @@
           <EntitySet Name="Vote_ChooseDetails" EntityType="Self.Vote_ChooseDetails" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Vote_items" EntityType="Self.Vote_items" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Vote_main" EntityType="Self.Vote_main" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Vote_maintypes" EntityType="Self.Vote_maintypes" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
@@ -175,15 +165,6 @@
           <Property Name="VoteTypeID" Type="Int32" />
           <Property Name="Createtime" Type="DateTime" Precision="3" />
         </EntityType>
-        <EntityType Name="Vote_maintypes">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="VoteTypeChar" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
-          <Property Name="VoteType" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="Createtime" Type="DateTime" Precision="3" />
-        </EntityType>
         <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="IPTables" EntityType="Self.IPTables" />
           <EntitySet Name="Selectobj_articles" EntityType="Self.Selectobj_articles" />
@@ -192,7 +173,6 @@
           <EntitySet Name="Vote_ChooseDetails" EntityType="Self.Vote_ChooseDetails" />
           <EntitySet Name="Vote_items" EntityType="Self.Vote_items" />
           <EntitySet Name="Vote_main" EntityType="Self.Vote_main" />
-          <EntitySet Name="Vote_maintypes" EntityType="Self.Vote_maintypes" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
@@ -276,16 +256,6 @@
                 <ScalarProperty Name="Endtime" ColumnName="Endtime" />
                 <ScalarProperty Name="VoteDescription" ColumnName="VoteDescription" />
                 <ScalarProperty Name="VoteTypeID" ColumnName="VoteTypeID" />
-                <ScalarProperty Name="Createtime" ColumnName="Createtime" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Vote_maintypes">
-            <EntityTypeMapping TypeName="Jiaheng.House2.Vote.Entities.Vote_maintypes">
-              <MappingFragment StoreEntitySet="Vote_maintypes">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="VoteTypeChar" ColumnName="VoteTypeChar" />
-                <ScalarProperty Name="VoteType" ColumnName="VoteType" />
                 <ScalarProperty Name="Createtime" ColumnName="Createtime" />
               </MappingFragment>
             </EntityTypeMapping>
